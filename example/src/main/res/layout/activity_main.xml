@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+>
+    <data class="SeatSelectionActivityBinding"/>
+    <!-- seat_layout_container -->
+    <RelativeLayout
+            android:id="@+id/seat_layout_container"
+            android:clipChildren="false"
+            android:clipToPadding="false"
+            android:paddingLeft="12dp"
+            android:paddingRight="12dp"
+            style="@style/match"
+    >
+        <com.mutualmobile.android.library.seatlayout.view.SeatPhotoView
+                android:id="@+id/seat_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:seatSelectedColor="@color/colorPrimary"
+                app:seatUnSelectedColor="@color/white"
+                app:zoomInIcon="@drawable/zoomin"
+                app:zoomOutIcon="@drawable/zoomout"
+        />
+        <ImageButton
+                android:id="@+id/zoom_button"
+                android:layout_width="32dp"
+                android:layout_height="@dimen/zoom_button_height"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentStart="true"
+                android:layout_marginBottom="@dimen/zoom_button_margin_bottom"
+                android:layout_marginStart="8dp"
+                android:adjustViewBounds="true"
+                android:background="@null"
+                android:scaleType="fitXY"
+                android:src="@drawable/zoomin"
+                android:tag="ZoomedIn"
+        />
+
+        <com.mutualmobile.android.library.seatlayout.view.RippleView
+                android:id="@+id/seat_layout_ripple_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+        />
+        <com.mutualmobile.android.library.seatlayout.view.ToolTipRelativeLayout
+                android:id="@+id/seat_layout_tooltip"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+        />
+    </RelativeLayout>
+</layout>

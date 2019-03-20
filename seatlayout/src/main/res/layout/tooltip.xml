@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:bind="http://schemas.android.com/apk/res-auto"
+>
+    <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+    >
+        <android.support.v7.widget.CardView
+                android:id="@+id/tooltip_container"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tooltip_pointer_up"
+                android:layout_toRightOf="@+id/tooltip_pointer_left"
+                android:scrollbars="none"
+                bind:cardBackgroundColor="@color/colorPrimary"
+                bind:cardCornerRadius="@dimen/size_4dp"
+                bind:cardElevation="0dp"
+        >
+            <LinearLayout
+                    android:orientation="vertical"
+                    android:paddingBottom="4dp"
+                    android:paddingLeft="8dp"
+                    android:paddingRight="8dp"
+                    android:paddingTop="4dp"
+                    android:gravity="center"
+                    style="@style/wrap"
+            >
+
+                <TextView
+                        android:id="@+id/tooltip_row"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="ROW 5"
+                        android:textColor="#dd000000"
+                        android:textSize="14sp"
+                />
+
+                <TextView
+                        android:id="@+id/tooltip_seat"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="SEAT 17"
+                        android:textColor="#dd000000"
+                        android:textSize="14sp"
+                />
+
+                <TextView
+                        android:id="@+id/tooltip_seat_price"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:alpha="0.54"
+                        android:text="$ 9.20"
+                        android:textColor="#000"
+                        android:textSize="12sp"
+                        android:layout_marginTop="@dimen/size_4dp"
+                />
+
+                <TextView
+                        android:id="@+id/tooltip_seat_type"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:alpha="0.54"
+                        android:text="NORMAL"
+                        android:textColor="#000"
+                        android:textSize="10sp"
+                />
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+
+        <ImageView
+                android:id="@+id/tooltip_pointer_up"
+                android:visibility="gone"
+                bind:srcCompat="@drawable/up"
+                style="@style/wrap"
+                android:tint="@color/colorPrimary"
+        />
+        <ImageView
+                android:id="@+id/tooltip_pointer_down"
+                android:layout_below="@id/tooltip_container"
+                android:layout_marginTop="-2dp"
+                bind:srcCompat="@drawable/down"
+                style="@style/wrap"
+                android:tint="@color/colorPrimary"
+        />
+        <ImageView
+                android:id="@+id/tooltip_pointer_left"
+                android:visibility="gone"
+                bind:srcCompat="@drawable/left"
+                style="@style/wrap"
+                android:tint="@color/colorPrimary"
+
+        />
+        <ImageView
+                android:id="@+id/tooltip_pointer_right"
+                android:layout_toRightOf="@id/tooltip_container"
+                android:visibility="gone"
+                bind:srcCompat="@drawable/right"
+                style="@style/wrap"
+                android:tint="@color/colorPrimary"
+        />
+    </RelativeLayout>
+</layout>

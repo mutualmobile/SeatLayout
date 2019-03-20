@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="SeatPhotoView">
+        <attr name="seatSelectedColor" format="color"/>
+        <attr name="seatUnSelectedColor" format="color"/>
+        <attr name="zoomInIcon" format="integer"/>
+        <attr name="zoomOutIcon" format="integer"/>
+        <attr name="unavailableIcon" format="integer"/>
+    </declare-styleable>
+
+</resources>

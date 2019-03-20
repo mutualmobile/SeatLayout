@@ -1,0 +1,22 @@
+language: android
+jdk: oraclejdk8
+android:
+  components:
+    - tools
+    - build-tools-28.0.3
+    - android-28
+    - extra-android-m2repository
+    - extra
+    - addon
+#    - sys-img-armabi-v7a-android-26
+script:
+    - ./gradlew clean assembleDebug
+#before_script:
+#  - echo no | android create avd --force -n test -t android-26 --abi armeabi-v7a
+#  - emulator -avd test -no-skin -no-audio -no-window &
+#  - android-wait-for-emulator
+#  - adb shell input keyevent 82 &
+#script:
+#  - if [ "$TRAVIS_PULL_REQUEST" = "true" ]; then
+#    ./gradlew connectedAndroidTest;
+#    fi
