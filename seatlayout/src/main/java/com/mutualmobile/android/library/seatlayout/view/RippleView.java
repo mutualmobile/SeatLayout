@@ -16,9 +16,9 @@ import com.mutualmobile.android.library.seatlayout.utils.DensityUtil;
 public class RippleView extends View {
 
     private static final float NORMAL_MAX_MORE_RADIUS_TIMES = 3f;
-    private Paint ripplePaint = new Paint();
+    private final Paint ripplePaint = new Paint();
 
-    private TimeInterpolator mInterpolator = new DecelerateInterpolator();
+    private final TimeInterpolator mInterpolator = new DecelerateInterpolator();
 
     private int startRadius;
     private int mChangeRadius;

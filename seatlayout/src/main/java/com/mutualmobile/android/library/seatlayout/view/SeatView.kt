@@ -3,7 +3,7 @@ package com.mutualmobile.android.library.seatlayout.view
 import android.content.Context
 import android.graphics.*
 import android.os.Build
-import android.support.v4.content.ContextCompat
+import androidx.core.content.ContextCompat
 import android.text.TextPaint
 import android.view.SoundEffectConstants
 import android.view.View
@@ -566,7 +566,7 @@ class SeatView {
         }
     }
 
-    private inner class Screen internal constructor(totalWidth: Float) {
+    private inner class Screen(totalWidth: Float) {
         private val screenWidth: Float
         private val screenHeight: Float = DensityUtil.dip2px(context, 5f)
         private val left: Float
@@ -596,20 +596,20 @@ class SeatView {
             screenPaint.color = Color.WHITE
 
             screenTextPaint = TextPaint(Paint.ANTI_ALIAS_FLAG)
-            screenTextPaint.setColor(Color.WHITE)
-            screenTextPaint.setTextSize(DensityUtil.sip2px(context, 14f))
-            screenTextPaint.setFilterBitmap(true)
-            screenTextPaint.setDither(true)
+            screenTextPaint.color = Color.WHITE
+            screenTextPaint.textSize = DensityUtil.sip2px(context, 14f)
+            screenTextPaint.isFilterBitmap = true
+            screenTextPaint.isDither = true
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                screenTextPaint.setLetterSpacing(0.13f)
+                screenTextPaint.letterSpacing = 0.13f
             }
             message = "SCREEN THIS WAY"
             textOffsetX = screenTextPaint.measureText(message) * 0.5f
-            textOffsetY = screenTextPaint.getFontMetrics().ascent * -0.8f + screenHeight
+            textOffsetY = screenTextPaint.fontMetrics.ascent * -0.8f + screenHeight
             baseLine = top + screenHeight + textOffsetY
         }
 
-        internal fun drawScreen() {
+        fun drawScreen() {
             val screenRect = RectF(left, top, left + screenWidth, top + screenHeight)
             canvas.drawRoundRect(screenRect, cornerRadius, cornerRadius, screenPaint)
             screenRect.top = screenRect.top + screenHeight / 2

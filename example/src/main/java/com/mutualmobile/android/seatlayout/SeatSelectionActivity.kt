@@ -1,9 +1,9 @@
 package com.mutualmobile.android.seatlayout
 
-import android.databinding.DataBindingUtil
+import androidx.databinding.DataBindingUtil
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
 import android.util.Log
+import androidx.appcompat.app.AppCompatActivity
 import com.mutualmobile.android.library.seatlayout.SeatListener
 import com.google.gson.Gson
 import com.mutualmobile.android.library.seatlayout.view.SeatView
@@ -34,7 +34,7 @@ class SeatSelectionActivity : AppCompatActivity(), SeatListener {
             val gson = Gson()
             provideSeatLayout(gson.fromJson<SeatLayoutResponse>(jsonString, SeatLayoutResponse::class.java))
         } catch (error: Error) {
-            Log.e("Reading JSON", error.message)
+            error.message?.let { Log.e("Reading JSON", it) }
         }
     }
 

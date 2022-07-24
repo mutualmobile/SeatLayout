@@ -30,7 +30,7 @@ fun getSeatScheme(areas: List<Area>): Array<Array<SeatData?>> {
         seat.areaIndex = seatData.areaIndex
         seat.rowIndex = seatData.rowIndex
         seat.rowNumber = row.rowNumber
-        seat.seatNumber = seatData.seatNumber;
+        seat.seatNumber = seatData.seatNumber
         seat.columnIndex = seatData.columnIndex
         seat.price = seatData.price
         seat.seatDescription = seatData.seatDescription ?: ""

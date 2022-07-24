@@ -1,7 +1,8 @@
 package com.mutualmobile.android.seatlayout
 
-import android.support.test.InstrumentationRegistry
-import android.support.test.runner.AndroidJUnit4
+import android.app.Application
+import androidx.test.core.app.ApplicationProvider
+import androidx.test.ext.junit.runners.AndroidJUnit4
 
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -18,7 +19,7 @@ class ExampleInstrumentedTest {
     @Test
     fun useAppContext() {
         // Context of the app under test.
-        val appContext = InstrumentationRegistry.getTargetContext()
+        val appContext = ApplicationProvider.getApplicationContext<Application>()
         assertEquals("com.mutualmobile.android.seatlayout", appContext.packageName)
     }
 }
