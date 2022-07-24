@@ -10,6 +10,9 @@ import android.net.Uri;
 import android.util.AttributeSet;
 import android.view.GestureDetector;
 import android.widget.ImageView;
+
+import androidx.appcompat.widget.AppCompatImageView;
+
 import com.mutualmobile.android.library.R;
 import com.mutualmobile.android.library.seatlayout.listener.*;
 import com.mutualmobile.android.library.seatlayout.photoview.*;
@@ -18,7 +21,7 @@ import com.mutualmobile.android.library.seatlayout.photoview.*;
  * A zoomable {@link ImageView}. See {@link SeatPhotoViewAttacher} for most of the details on how the zooming
  * is accomplished
  */
-public class SeatPhotoView extends android.support.v7.widget.AppCompatImageView {
+public class SeatPhotoView extends AppCompatImageView {
 
     int selectedColor;
     int unselectedColor;

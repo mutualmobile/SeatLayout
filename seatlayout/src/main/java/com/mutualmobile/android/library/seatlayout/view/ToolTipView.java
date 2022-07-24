@@ -5,7 +5,7 @@ import android.animation.AnimatorListenerAdapter;
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
 import android.content.Context;
-import android.databinding.DataBindingUtil;
+import androidx.databinding.DataBindingUtil;
 import android.graphics.RectF;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -29,7 +29,7 @@ public class ToolTipView extends LinearLayout
     public static final String SCALE_Y_COMPAT = "scaleY";
     public static final String ALPHA_COMPAT = "alpha";
     private final Context mContext;
-    private Collection<Animator> animators = new ArrayList<>(5);
+    private final Collection<Animator> animators = new ArrayList<>(5);
     private OnToolTipViewClickedListener mListener;
     private RectF bounds;
     private int tooltipHeight;

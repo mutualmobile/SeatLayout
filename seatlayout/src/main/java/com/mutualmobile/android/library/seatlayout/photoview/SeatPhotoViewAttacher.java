@@ -5,7 +5,7 @@ import android.graphics.Matrix;
 import android.graphics.Matrix.ScaleToFit;
 import android.graphics.RectF;
 import android.graphics.drawable.Drawable;
-import android.support.v4.view.MotionEventCompat;
+import androidx.core.view.MotionEventCompat;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.view.View;
@@ -26,13 +26,13 @@ public class SeatPhotoViewAttacher implements View.OnTouchListener,
     public static float DEFAULT_MAX_SCALE = 3.0f;
     public static float DEFAULT_MID_SCALE = 1.75f;
     public static float DEFAULT_MIN_SCALE = 1.0f;
-    private static int DEFAULT_ZOOM_DURATION = 200;
+    private static final int DEFAULT_ZOOM_DURATION = 200;
 
     private static final int EDGE_NONE = -1;
     private static final int EDGE_LEFT = 0;
     private static final int EDGE_RIGHT = 1;
     private static final int EDGE_BOTH = 2;
-    private static int SINGLE_TOUCH = 1;
+    private static final int SINGLE_TOUCH = 1;
 
     private Interpolator mInterpolator = new AccelerateDecelerateInterpolator();
     private int mZoomDuration = DEFAULT_ZOOM_DURATION;
@@ -43,7 +43,7 @@ public class SeatPhotoViewAttacher implements View.OnTouchListener,
     private boolean mAllowParentInterceptOnEdge = true;
     private boolean mBlockParentIntercept = false;
 
-    private ImageView mImageView;
+    private final ImageView mImageView;
 
     // Gesture Detectors
     private GestureDetector mGestureDetector;
